@@ -18,14 +18,14 @@ logger = logging.getLogger(__name__)
 mongo_uri = os.getenv('MONGO_URI')
 client = MongoClient(mongo_uri)
 db = client['bot_database']
-users_collection = db['users']
+users_collection = db['musicdl_users']
 
 # Telegram API credentials
 API_ID = os.getenv('API_ID')
 API_HASH = os.getenv('API_HASH')
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 ADMIN_ID = int(os.getenv('ADMIN_ID'))
-PORT = int(os.getenv('PORT', 5000))  # Default port is 5000
+PORT = int(os.getenv('PORT', 5070))  # Default port is 5000
 
 # Create the client and connect
 bot = TelegramClient('bot_pinterest', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
